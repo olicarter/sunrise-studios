@@ -1,113 +1,101 @@
-import Image from "next/image";
+'use client'
 
+import cn from '@/utils/cn'
+import { hurricane, jotiOne } from './fonts'
+import { motion } from 'framer-motion'
+
+const variants = {
+  list: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  },
+  item: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  },
+}
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className="flex flex-col h-svh items-center justify-center overflow-hidden">
+      <h1 className="flex flex-col gap-1 items-center relative z-10">
+        <span className={cn('text-4xl', jotiOne.className)}>SUNRISE</span>
+        <span className={cn('text-xl', hurricane.className)}>STUDIOS</span>
+      </h1>
+      <div className="absolute bottom-0 h-screen overflow-hidden w-screen">
+        <motion.div
+          animate="animate"
+          className="h-screen w-screen translate-x-[calc(50vw-50vh)] translate-y-[calc(100vh-30vh)]"
+          initial="initial"
+          variants={variants.list}
+        >
+          <motion.div
+            className="absolute bg-rose-500 shadow-[0_0_16vh_4vh] shadow-rose-500/50 inset-[16vh] rounded-full size-[68vh] z-[12]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-red-500 shadow-[0_0_16vh_4vh] shadow-red-500/50 inset-[8vh] rounded-full size-[84vh] z-[11]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-orange-500 shadow-[0_0_16vh_4vh] shadow-orange-500/50 inset-0 rounded-full size-[100vh] z-[10]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-amber-500 shadow-[0_0_16vh_4vh] shadow-amber-500/50 -inset-[8vh] rounded-full size-[116vh] z-[9]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-yellow-500 shadow-[0_0_16vh_4vh] shadow-yellow-500/50 -inset-[16vh] rounded-full size-[132vh] z-[8]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-lime-500 shadow-[0_0_16vh_4vh] shadow-lime-500/50 -inset-[24vh] rounded-full size-[148vh] z-[7]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-green-500 shadow-[0_0_16vh_4vh] shadow-green-500/50 -inset-[32vh] rounded-full size-[164vh] z-[6]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-emerald-500 shadow-[0_0_16vh_4vh] shadow-emerald-500/50 -inset-[40vh] rounded-full size-[180vh] z-[5]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-teal-500 shadow-[0_0_16vh_4vh] shadow-teal-500/50 -inset-[48vh] rounded-full size-[196vh] z-[4]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-cyan-500 shadow-[0_0_16vh_4vh] shadow-cyan-500/50 -inset-[56vh] rounded-full size-[212vh] z-[3]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-sky-500 shadow-[0_0_16vh_4vh] shadow-sky-500/50 -inset-[64vh] rounded-full size-[228vh] z-[2]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-blue-500 shadow-[0_0_16vh_4vh] shadow-blue-500/50 -inset-[72vh] rounded-full size-[244vh] z-[1]"
+            variants={variants.item}
+          />
+          <motion.div
+            className="absolute bg-indigo-500 shadow-[0_0_16vh_4vh] shadow-indigo-500/50 -inset-[80vh] rounded-full size-[260vh] z-[0]"
+            variants={variants.item}
+          />
+        </motion.div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    </div>
+  )
 }
